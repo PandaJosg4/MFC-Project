@@ -21,7 +21,7 @@ public:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 
 // Key + Game Data
-    bool keysPressed[4] = { false }; // left->up->right->down
+    bool keysPressed[4]; // left->up->right->down
     Player playerOne;
 
 
