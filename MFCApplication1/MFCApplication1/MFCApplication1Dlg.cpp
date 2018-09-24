@@ -191,8 +191,8 @@ void CMFCApplication1Dlg::OnTimer(UINT_PTR nIDEvent)
         yChange++;
 
     // Update Player coordinates + reflect this on dialog
-    xChange = xChange * playerOne.multiplier;
-    yChange = yChange * playerOne.multiplier;
+    xChange = xChange * playerOne.speed;
+    yChange = yChange * playerOne.speed;
     MovePlayerDlg(xChange, yChange);
     playerOne.Move(xChange, yChange);
     Point coord = playerOne.Coordinates();

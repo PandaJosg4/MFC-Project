@@ -9,7 +9,7 @@ class Player
 {
 // Constructor
 public:
-    Player() { coor.x = 0, coor.y = 0, multiplier = 6; };
+    Player() { coor.x = 0, coor.y = 0, speed = 6; };
 
 // Methods
     void Move(int xChange, int yChange);
@@ -18,7 +18,7 @@ public:
     void SetCoordinates(int x1, int y1);
 
 // Data
-    int multiplier; // Multiplier for Player movement
+    int speed;
 
 private:
     Point coor;
