@@ -157,6 +157,31 @@ void CMFCApplication1Dlg::MovePlayerDlg(int xChange, int yChange)
     m_TriangleHolder.MoveWindow(rect.left + xChange, rect.top + yChange, rect.Width(), rect.Height());
 }
 
+/*
+virtual BOOL Create(
+LPCTSTR lpszClassName,
+LPCTSTR lpszWindowName,
+DWORD dwStyle,
+Const RECT& rect,
+CWnd* pParentWnd,
+UINT nID,
+CCreateContext* pContext = NULL
+);*/
+
+void CMFCApplication1Dlg::CreateProjDlg()
+{
+	CStatic* projStatic;
+	m_ProjHolders.push_back(projStatic);
+	CString classname, windowname;
+	classname.Format(_T("Projectile"));
+	CRect projRect(5, 5, 10, 10);
+
+	(*projStatic).Create(NULL, WS_CHILD | WS_VISIBLE | SS_BITMAP, projRect, this, 10000);
+
+	HBITMAP bmp = LoadBitmap(NULL, _T("Shot.bmp"));
+	(*projStatic).SetBitmap(bmp);
+}
+
 
 // Starts game
 void CMFCApplication1Dlg::OnBnClickedStart()
@@ -180,7 +205,7 @@ void CMFCApplication1Dlg::OnTimer(UINT_PTR nIDEvent)
     int xChange = 0, 
         yChange = 0;
 
-    // Check which keys are down -> find which direction to move Player
+    // Check which keys are down -> find which direction to move Player 
     if (keysPressed[0] == true) // left
         xChange--;
     if (keysPressed[1] == true) // up
@@ -224,6 +249,10 @@ BOOL CMFCApplication1Dlg::PreTranslateMessage(MSG* pMsg)
         
         switch (pMsg->wParam)
         {
+		case 32:	// Shoot projectiles with space key
+			//CreateProjDlg();	// Currently crashes when constructing dialog
+			//playerOne.Shoot();
+			break;
         case 37:    // kP[0] for left arrow
             keysPressed[0] = true;
             break;
