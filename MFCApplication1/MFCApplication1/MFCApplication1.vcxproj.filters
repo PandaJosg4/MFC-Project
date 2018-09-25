@@ -39,6 +39,9 @@
     <ClInclude Include="Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApplication1.cpp">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,10 +74,10 @@
     <Image Include="res\MFCApplication1.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\icon1.ico">
+    <Image Include="res\bitmap1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\bitmap1.bmp">
+    <Image Include="Shot.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

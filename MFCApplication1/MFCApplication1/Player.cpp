@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "Player.h"
+#include "Projectile.h"
 
 
 // Updates coordinates of player
@@ -11,6 +12,11 @@ void Player::Move(int xChange, int yChange)
 {
     coor.x += xChange;
     coor.y += yChange;
+}
+
+void Player::Shoot()
+{
+	
 }
 
 // Returns coordinates of player
